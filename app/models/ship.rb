@@ -4,12 +4,10 @@ class Ship
   
   @@all = []
   
-  def initialize(name, type, booty)
-    @name = name 
-    @type = type
-    @booty = booty 
-    @@all << self 
-  end
+  def initialize(details)
+        details.each {|key, value| self.send("#{key}=", value)}
+        @@all << self
+    end
   
   def self.all 
     @@all   
