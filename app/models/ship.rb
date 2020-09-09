@@ -4,8 +4,8 @@ class Ship
   
   @@all = []
   
-  def initialize(details)
-        details.each {|key, value| self.send("#{key}=", value)}
+  def initialize(ship)
+        ship.each {|key, value| self.send("#{key}=", value)}
         @@all << self
     end
   
